@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "rich-consoleimager"
+version = "0.0.1"
+description = ""
+authors = ["Jeremy Schulman <nwkautomaniac@gmail.com>"]
+
+
+[tool.poetry.dependencies]
+python = "^3.10"
+rich = "^12.5.1"
+html2image = "^2.0.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1.*"
+invoke = "^1.7.0"
+black = "^22.6.0"
+flake8 = "^4.*"
+pytest-cov = "^2.12.1"
+pytest-asyncio = "^0.15.1"
+asynctest = "^0.13.0"
+tox = "^3.23.1"
+pre-commit = "^2.19.0"
+interrogate = "^1.5.0"
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.interrogate]
+    fail-under = 0
+    verbose = 1
+    color = true
+    ignore-module = true
+    exclude = ["tasks.py", "examples", "build", "venv"]
