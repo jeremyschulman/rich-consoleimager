@@ -60,9 +60,8 @@ class ConsoleImage:
         #       there is a way to do this without hardcoding the XML path
 
         svg_xml = ETree.fromstring(svg_content)
-        svg_rec_dict = svg_xml[1][0][0].attrib
-        height = int(float(svg_rec_dict["height"]))
-        width = int(float(svg_rec_dict["width"]))
+        _, _, width, height = svg_xml.attrib["viewBox"].split()
+        width, height = int(float(width)), int(float(height))
 
         def create_png():
             """Creates the image.png file in the temp-directory"""
